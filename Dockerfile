@@ -9,5 +9,5 @@ RUN echo "#!/bin/bash" > /usr/bin/message.sh && \
 RUN adduser -s /bin/message.sh lesmi
 
 # To prevent from flooding, run upto 10 min
-ENTRYPOINT ["timeout","-t","600","/usr/bin/sshd","-D"]
+ENTRYPOINT ["timeout","-t","600","/usr/sbin/sshd","-D"]
 RUN rm /bin/bash /bin/sh && ln -s /bin/message.sh /bin/bash && ln -s /bin/message.sh /bin/sh && rm /bin/apk
