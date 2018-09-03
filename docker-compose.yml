@@ -2,3 +2,6 @@ version: '3'
 services:
   ssh:
     build: .
+    restart: always
+    ports:
+      - "1919:22"
